@@ -4,12 +4,11 @@ import CardImage from "@material-tailwind/react/CardImage";
 import CardBody from "@material-tailwind/react/CardBody";
 import CardFooter from "@material-tailwind/react/CardFooter";
 import H6 from "@material-tailwind/react/Heading6";
-import Paragraph from "@material-tailwind/react/Paragraph";
 import Button from "@material-tailwind/react/Button";
 
 export default function GenericCard({props}) {
     return (
-        <Card className='container'>
+        <Card className='container shadow-1xl bg-white flex flex-col items-center h-96'>
             <CardImage
                 src={props.image}
                 alt="Card Image"
@@ -17,18 +16,24 @@ export default function GenericCard({props}) {
             />
 
             <CardBody>
-                <H6 color="gray">{props.name}</H6>
-                <Paragraph color="gray">
+                <H6 color="gray" ><span className="font-mono tracking-widest">{props.name}</span></H6>
+                <div>
                     <span className="flex font-bold">Species : <p className="ml-2 font-semibold">{props.species}</p></span>
                     <span className="flex font-bold">Episodes : <p className="ml-2 font-semibold">{props.episodes}</p></span>
-                    <span className="flex font-bold">Actual State : <p className="ml-2 font-semibold">{props.status}</p></span>
-                </Paragraph>
+                    <span className="flex font-bold">Status : <p className="ml-2 font-semibold">{props.status==='unknown'?' ? ':props.status}</p></span>
+                </div>
             </CardBody>
 
             <CardFooter>
-                <Button color="lightBlue" size="lg" ripple="light">
-                    Read More
-                </Button>
+            <Button
+                    color="amber"
+                    buttonType="link"
+                    size="sm"
+                    rounded={false}
+                    block={false}
+                    iconOnly={false}
+                    ripple="dark"
+                >Details</Button>
             </CardFooter>
         </Card>
     );
