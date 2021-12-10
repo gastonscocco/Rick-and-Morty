@@ -77,7 +77,7 @@ export default function NavBar() {
     const goHome=()=>{
         URL==='/favorite' &&history.push('/home')
     }
-    console.log(window.screen)
+
     return state.userState?
     (
         <div className="fixed w-full bg-gray-500 h-15 z-50">
@@ -100,11 +100,13 @@ export default function NavBar() {
                                     <span className='text-yellow-200 text-xl'>Morty</span>
                                 </div>
                                 </NavbarBrand>
-                                <NavbarToggler
-                                    color="white"
-                                    onClick={() => setOpenMenu(!openMenu)}
-                                    ripple="light"
-                                    />
+                                {window.screen.width>1000 && 
+                                    <NavbarToggler
+                                        color="white"
+                                        onClick={() => setOpenMenu(!openMenu)}
+                                        ripple="light"
+                                        />
+                                }
                             </NavbarWrapper>
                             
                             {window.screen.width>1000 ? 
