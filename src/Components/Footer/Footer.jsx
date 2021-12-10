@@ -10,8 +10,28 @@ function Footer() {
 
     return URL==='/home' || URL ==='/favorite' ? 
     (
-        <div className='flex items-center justify-around h-12 bg-red-200'>
-            This is the footer
+        <div className='flex items-center justify-center h-20 bg-gray-200'>
+            <div className='flex items-center justify-center mr-4'>
+                <span className='text-xl font-semibold text-yellow-600 mr-2'>Dev by</span>
+                <span className='text-xl font-semibold text-blue-500 flex flex-wrap'>GS</span>
+            </div>
+            <div className='flex flex-col items-center justify-center ml-4'>
+                        <span className='font-bold'>Contact me!</span>
+                        <div className='flex w-28 items-center justify-around'>
+                            <a  href='https://www.linkedin.com/in/gaston-scocco/' 
+                                rel='noreferrer' 
+                                target="_blank"><AiFillLinkedin className='text-3xl text-blue-500'/>
+                            </a>
+                            <a  href='https://github.com/gastonscocco' 
+                                rel='noreferrer' 
+                                target="_blank"><AiFillGithub className='text-3xl'/>
+                            </a>
+                            <a  href='mailto:gaston_scocco@hotmail.com' 
+                                rel='noreferrer' 
+                                target="_blank"><AiFillMail className='text-3xl text-gray-400'/>
+                            </a>
+                        </div>
+                    </div>
         </div>
     )
     :

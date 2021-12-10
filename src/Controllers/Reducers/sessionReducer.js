@@ -42,7 +42,6 @@ export default function sessionReducer(state=initialState, {type,payload}){
             if(!payload.name)newList = state.characters.originalList;
 
             if(payload.orderBy==='None'){
-                
                 result={
                     ...state,
                     characters: {

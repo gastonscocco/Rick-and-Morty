@@ -26,7 +26,14 @@ function Home() {
     
     return (
         <div className='min-h-screen w-full pt-32 px-12 flex flex-col items-center justify-center bg-yellow-100'>
-            <div>Welcome to <span>Rick</span> & <span>Morty</span> Wiki!</div>
+            <div className='flex flex-col items-center justify-center text-3xl font-mono text-gray-400 border-b-2 border-gray-400 pb-4'>
+                <p>Welcome to </p>
+                <p className='text-gray-700 text-xl'>
+                    <span className='mr-2 font-bold text-blue-400 text-4xl'>Rick</span>& 
+                    <span className='ml-2 font-bold text-yellow-400 text-4xl'>Morty</span>
+                </p> 
+                <p>Wiki!</p>
+            </div>
             <div>
                 <Pagination page={page} pages={pages}/>
             </div>
