@@ -107,7 +107,7 @@ export default function NavBar() {
                     </NavbarWrapper>
                     
                     {window.screen.width>1000 ? 
-                        <Nav>
+                        <div className="flex">
                                 <Link to='/home'>
                                     <div className='cursor-pointer mx-2' >
                                         <span className='cursor-pointer text-2xl font-semibold text-white'>Explore</span>
@@ -123,7 +123,7 @@ export default function NavBar() {
                                 <div className='cursor-pointer mx-2' onClick={Out}>
                                 <span className='cursor-pointer text-2xl font-semibold text-white'>Out</span>
                                 </div>
-                        </Nav>
+                        </div>
                     :
                     <NavbarCollapse open={openMenu}>
                         <Nav>
