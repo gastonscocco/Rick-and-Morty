@@ -1,5 +1,6 @@
 export const BASIC_URL = 'https://rickandmortyapi.com/api/character';
-export const ONE_CHAR = 'https://rickandmortyapi.com/api/character/'
+export const ONE_CHAR = 'https://rickandmortyapi.com/api/character/';
+export const SHARE_URL = 'https://rick-and-morty-gastonscocco.vercel.app/'
 
 export const GET_CHARACTER = 'GET_CHARACTER';
 export const USER_JOINED = 'USER_JOINED';

@@ -1,11 +1,25 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import { AiFillGithub, AiFillMail, AiFillLinkedin } from "react-icons/ai";
+import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { SHARE_URL } from '../../constans';
+import Swal from 'sweetalert2'
 
 
 
 function Footer() {
     const URL = useLocation().pathname
+
+    const copy=()=>{
+        Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: 'Copy to clipboard!',
+            showConfirmButton: false,
+            timer: 1500
+        })
+        window.scrollTo(0, 0)
+    }
 
 
     return URL==='/home' || URL ==='/favorite' ? 
@@ -14,6 +28,12 @@ function Footer() {
             <div className='flex items-center justify-center mr-4'>
                 <span className='text-xl font-semibold text-yellow-600 mr-2'>Dev by</span>
                 <span className='text-xl font-semibold text-blue-500 flex flex-wrap'>GS</span>
+            </div>
+            <div>
+                <CopyToClipboard text={SHARE_URL}>
+                    <span   className='font-bold text-gray-500 mx-10 cursor-pointer'
+                            onClick={copy}>Share!</span>
+                </CopyToClipboard>
             </div>
             <div className='flex flex-col items-center justify-center ml-4'>
                         <span className='font-bold'>Contact me!</span>

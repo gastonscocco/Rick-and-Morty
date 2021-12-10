@@ -26,6 +26,7 @@ export default function NavBar() {
     const URL = useLocation().pathname
     
     useEffect(() => {
+        window.scrollTo(0, 0)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [state.userState, modal, URL, window.screen.width])
 
