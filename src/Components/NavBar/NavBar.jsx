@@ -12,12 +12,13 @@ import Icon from "@material-tailwind/react/Icon";
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { Redirect, useHistory, useLocation } from 'react-router-dom'
+import { Link, Redirect, useHistory, useLocation } from 'react-router-dom'
 import { Logout } from '../../Controllers/Actions/session'
 import Swal from 'sweetalert2'
 import Modal from "../ModalContainer/Modal";
 import Search from "../Search/Search";
 import { restoreSearch, searchCharacter } from "../../Controllers/Actions/search";
+import Button from "@material-tailwind/react/Button";
 
 export default function NavBar() {
     const [openMenu, setOpenMenu] = useState(false);
@@ -77,7 +78,7 @@ export default function NavBar() {
     const goHome=()=>{
         URL==='/favorite' &&history.push('/home')
     }
-
+    console.log(window.screen)
     return state.userState?
     (
         <div className="fixed w-full bg-gray-500 h-15 z-50">
@@ -86,9 +87,6 @@ export default function NavBar() {
                                         onCancel={showModal}
                                 />}
                 />
-
-
-
 
             <Navbar color="gray">
                 <NavbarContainer>
@@ -109,6 +107,25 @@ export default function NavBar() {
                         />
                     </NavbarWrapper>
                     
+                    {window.screen.width>1000 ? 
+                        <Nav>
+                                <Link to='/home'>
+                                    <div className='cursor-pointer mx-2' >
+                                        <span className='cursor-pointer text-2xl font-semibold text-white'>Explore</span>
+                                    </div>
+                                </Link>
+                            {URL==='/home' && <div className='cursor-pointer mx-2' 
+                                                        onClick={showModal}>
+                                                    <span className='cursor-pointer text-2xl font-semibold text-white'>Search</span>
+                                                </div>}
+                                <div className='cursor-pointer mx-2' onClick={favorite}>
+                                    <span className='cursor-pointer text-2xl font-semibold text-white'>Favorite</span>
+                                </div>
+                                <div className='cursor-pointer mx-2' onClick={Out}>
+                                <span className='cursor-pointer text-2xl font-semibold text-white'>Out</span>
+                                </div>
+                        </Nav>
+                    :
                     <NavbarCollapse open={openMenu}>
                         <Nav>
                             <NavItem href="" ripple="light">
@@ -132,7 +149,7 @@ export default function NavBar() {
                                 </div>
                             </NavItem>
                         </Nav>
-                    </NavbarCollapse>
+                    </NavbarCollapse>}
                 </NavbarContainer>
             </Navbar>
         </div>
