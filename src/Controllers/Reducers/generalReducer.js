@@ -3,6 +3,7 @@ import { SEARCH_TARGET, SELECTED_PAGE } from "../../constans"
 
 const initialState = {
     page: 1,
+    selectCharacter:{},
 }
 
 export default function generalReducer(state=initialState, {type,payload}){

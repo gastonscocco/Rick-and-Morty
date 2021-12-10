@@ -32,10 +32,11 @@ export default function NavBar() {
         state.userState && setOpenMenu(false)
         modal && setOpenMenu(false)
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [state.userState, modal])
+    }, [state.userState, modal, URL])
 
 
     const Out=()=>{
+        setOpenMenu(false)
         Swal.fire({
             title: 'Do you want to leave ?',
             icon: 'warning',
@@ -79,11 +80,10 @@ export default function NavBar() {
 
     return state.userState?
     (
-        <div className="fixed w-full bg-gray-500 h-15">
+        <div className="fixed w-full bg-gray-500 h-15 z-50">
             <Modal  trigger={modal}
                     children={<Search   onConfirm={search}
                                         onCancel={showModal}
-                                        ForwardRef='/home'
                                 />}
                 />
 
@@ -94,7 +94,9 @@ export default function NavBar() {
                 <NavbarContainer>
                     <NavbarWrapper>
                         <NavbarBrand>
-                        <div className='flex w-32 justify-around items-center font-bold'>
+                        <div    className='flex w-32 justify-around items-center font-bold cursor-pointer' 
+                                onClick={goHome}
+                            >
                             <span className='text-blue-200 text-xl' >Rick</span>
                             <p className='text-white font-normal mx-2'>{'&'}</p> 
                             <span className='text-yellow-200 text-xl'>Morty</span>

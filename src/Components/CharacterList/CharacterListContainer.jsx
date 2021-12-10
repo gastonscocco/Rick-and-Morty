@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import GenericCard from '../Cards/GenericCard'
 
-function CharacterListContainer() {
+function CharacterListContainer(props) {
     const characters = useSelector(state => state.sessionReducer.characters)
     const pageNum = useSelector(state => state.generalReducer.page)
 
@@ -13,7 +13,23 @@ function CharacterListContainer() {
         return characters.slice(init, end)
     }
 
-    return characters.filteredList.length?
+    return props.favorites?
+    (
+        <div 
+            className='w-screen flex flex-wrap items-center justify-center'
+            >
+            {showPage(characters.favList, pageNum).map((item, index)=>{
+                    return (
+                        <div key={index} className='w-56 m-6'>
+                            <GenericCard key={index} props={item}/>
+                        </div>
+                    )
+                })
+            }
+        </div>
+    )
+    :
+    characters.filteredList.length?
     (
         <div 
             className='w-screen flex flex-wrap items-center justify-center'

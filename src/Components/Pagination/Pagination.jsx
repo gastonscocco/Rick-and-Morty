@@ -38,14 +38,14 @@ function Pagination({page, pages}) {
     }, [])
 
     return (
-        <div className='flex items-center justify-around bg-gray-200 py-2 w-screen'>
-            <button className={page===1?'font-transparent':'font-bold text-2xl text-blue-400'} 
+        <div className='flex items-center justify-around my-10 w-full'>
+            <button className={page===1?'invisible':'font-bold text-2xl text-orange-400'} 
                     disabled={page===1} 
                     onClick={clickPrev} 
                     onKeyDown={keyPrev}
                 ><FcPrevious/></button>
             <div>
-                <span className='font-semibold'>Page </span>
+                <span className='font-semibold ml-4'>Page </span>
                     <select value={page}
                             className='bg-transparent'
                             onChange={changePag} 
@@ -55,9 +55,9 @@ function Pagination({page, pages}) {
                             return <option key={`pag-${index}`}>{index+1}</option>
                         })}
                     </select>
-                <span className='font-semibold'> of {pages}</span>
+                <span className='font-semibold mr-4'> of {pages}</span>
             </div>
-            <button className={page===pages?'font-transparent':'font-bold text-2xl text-blue-400'} disabled={page===pages} onClick={clickNext} onKeyDown={keyNext}><FcNext/></button>
+            <button className={page===pages?'invisible':'font-bold text-2xl text-blue-400'} disabled={page===pages} onClick={clickNext} onKeyDown={keyNext}><FcNext/></button>
         </div>
     )
 }

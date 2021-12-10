@@ -11,3 +11,14 @@
     align-items: center;
     justify-content: center;
 }
+
+.joinedText{
+    position: relative;
+    top: -25vh;
+    z-index: 99999;
+}
+
+.JoinedBtn{
+    position: relative;
+    z-index: 99999;
+}
