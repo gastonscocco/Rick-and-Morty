@@ -4,7 +4,7 @@ Soy Gaston, de Cordoba Argentina ! 👋
 
 
 Desarrolle esta app en una entrevista tecnica, y comparto el link en este repo!
-[Rick & Morty App](https://rick-and-morty-gastonscocco.vercel.app/home) 
+[Rick & Morty App](https://rick-and-morty-gastonscocco.vercel.app) 
 
 Me llevo aproximadamente unas 20hs aunque hay cosas que aun busco retocar, sobre todo en CSS
 Utilicé las siguientes tecnologías
@@ -25,7 +25,7 @@ I'm Gaston, from Cordoba Argentina! 👋
 
 
 I developed this app in a technical interview, and I share the link in this repo!
-[Rick & Morty App](https://rick-and-morty-gastonscocco.vercel.app/home) 
+[Rick & Morty App](https://rick-and-morty-gastonscocco.vercel.app) 
 
 It took me approximately 20hs although there are things that I am still looking to tweak, especially in CSS
 I used the following technologies
