@@ -37,9 +37,15 @@ function Home() {
             <div>
                 <Pagination page={page} pages={pages}/>
             </div>
-            <div className='flex w-screen items-center justify-around'>
-                <CharacterListContainer/>
-            </div>
+            {characters.length?
+                <div className='flex w-screen items-center justify-around'>
+                    <CharacterListContainer/>
+                </div>
+            :
+                <div>
+                    <img src='https://cdn.discordapp.com/attachments/902284628621148220/918726423861133412/Spinner-1s-217px_1.gif' alt='loading'/>
+                </div>
+            }
             <div className=' mb-8'>
                 <span   onClick={goUp}
                         className='text-xl font-bold text-gray-500 hover:text-blue-400 rounded-3xl cursor-pointer'
