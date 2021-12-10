@@ -18,7 +18,6 @@ import Swal from 'sweetalert2'
 import Modal from "../ModalContainer/Modal";
 import Search from "../Search/Search";
 import { restoreSearch, searchCharacter } from "../../Controllers/Actions/search";
-import Button from "@material-tailwind/react/Button";
 
 export default function NavBar() {
     const [openMenu, setOpenMenu] = useState(false);
