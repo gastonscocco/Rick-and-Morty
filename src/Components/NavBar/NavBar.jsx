@@ -100,7 +100,7 @@ export default function NavBar() {
                                     <span className='text-yellow-200 text-xl'>Morty</span>
                                 </div>
                                 </NavbarBrand>
-                                {window.screen.width>1000 && 
+                                {window.screen.width<1000 && 
                                     <NavbarToggler
                                         color="white"
                                         onClick={() => setOpenMenu(!openMenu)}
