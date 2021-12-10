@@ -127,7 +127,7 @@ export default function NavBar() {
                                             <span className='cursor-pointer text-2xl font-semibold text-white'><FcLike/></span>
                                         </div>
                                         <div className='cursor-pointer mx-2' onClick={Out}>
-                                        <span className='cursor-pointer text-2xl font-semibold text-gray-700'><FiLogOut/></span>
+                                            <span className='cursor-pointer text-2xl font-semibold text-gray-700'><FiLogOut/></span>
                                         </div>
                                 </div>
                             }
